@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>一路</title>
+  
+  <subtitle>每天进步一点</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://Li970211.github.io/"/>
+  <updated>2018-03-21T04:41:01.408Z</updated>
+  <id>http://Li970211.github.io/</id>
+  
+  <author>
+    <name>李嘉</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello</title>
+    <link href="http://Li970211.github.io/2018/03/21/hello/"/>
+    <id>http://Li970211.github.io/2018/03/21/hello/</id>
+    <published>2018-03-21T04:29:06.000Z</published>
+    <updated>2018-03-21T04:41:01.408Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>大家好！我叫<strong>李嘉</strong>，来自江西省萍乡市。现就读于<strong>华东交通大学软件学院</strong>，在以后的日子中要努力学习，用知识武装自己。加油！！！</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;大家好！我叫&lt;strong&gt;李嘉&lt;/strong&gt;，来自江西省萍乡市。现就读于&lt;strong&gt;华东交通大学软件学院&lt;/strong&gt;，在以后的日子中要努力学习，用知识武装自己。加油！！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
