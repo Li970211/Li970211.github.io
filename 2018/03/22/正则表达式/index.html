@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="一路">
 <meta property="og:description" content="本文章介绍一些常见的正则表达式。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-23T03:15:15.870Z">
+<meta property="og:updated_time" content="2018-03-24T06:28:00.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="本文章介绍一些常见的正则表达式。">
@@ -166,13 +166,13 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a  href="http://www.li970211.github.io">博客首页</a></li>
+                            <li><a  href="/./index.html">博客首页</a></li>
                         
-                            <li><a  href="/works">作品展示</a></li>
+                            <li><a  href="/work">作品展示</a></li>
                         
-                            <li><a  href="http://www.runoob.com/">学习导航</a></li>
+                            <li><a  href="http://www.runoob.com/">前端学习导航</a></li>
                         
-                            <li><a  href="/resume">个人简历</a></li>
+                            <li><a  href="/about">个人简历</a></li>
                         
                         </ul>
                     </nav>
@@ -195,7 +195,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/js中的this/" style="font-size: 10px;">js中的this</a> <a href="/tags/js中的正则表达式/" style="font-size: 10px;">js中的正则表达式</a>
+                        <a href="/tags/CSS布局/" style="font-size: 10px;">CSS布局</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/js中的this/" style="font-size: 10px;">js中的this</a> <a href="/tags/js中的正则表达式/" style="font-size: 10px;">js中的正则表达式</a>
                     </div>
                 </section>
                 
@@ -204,6 +204,14 @@
                     <div id="js-friends">
                     
                       <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.baidu.com/">百度</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
                     
                     </div>
                 </section>
@@ -243,13 +251,13 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="http://www.li970211.github.io">博客首页</a></li>
+                    <li><a href="/./index.html">博客首页</a></li>
                 
-                    <li><a href="/works">作品展示</a></li>
+                    <li><a href="/work">作品展示</a></li>
                 
-                    <li><a href="http://www.runoob.com/">学习导航</a></li>
+                    <li><a href="http://www.runoob.com/">前端学习导航</a></li>
                 
-                    <li><a href="/resume">个人简历</a></li>
+                    <li><a href="/about">个人简历</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -331,11 +339,33 @@
 <h3 id="匹配特定数字"><a href="#匹配特定数字" class="headerlink" title="匹配特定数字"></a>匹配特定数字</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配正整数</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[1-9]\d*$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配负整数</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^-[1-9]\d*$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配整数</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^-?[1-9]\d*$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配非负整数（正整数 + 0）</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[1-9]\d*|0$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配非正整数（负整数 + 0）</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^-[1-9]\d*|0$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配正浮点数</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配负浮点数</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配浮点数</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配非负浮点数（正浮点数 + 0）</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配非正浮点数（负浮点数 + 0）</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$/</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配由26个英文字母组成的字符串</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[A-Za-z]+$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配由26个英文字母的大写组成的字符串</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[A-Z]+$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配由26个英文字母的小写组成的字符串</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[a-z]+$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配由数字和26个英文字母组成的字符串</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[A-Za-z0-9]+$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配由数字、26个英文字母或者下;划线组成的字符串</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\w+$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配空白行的正则表达式</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\n\s*\r/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配首尾空白字符的正则表达式</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\s*|\s*$/</span>;</span><br><span class="line"><span class="keyword">var</span> rtrim = <span class="regexp">/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配双字节字符(包括汉字在内, 一个双字节字符长度计2，ASCII字符计1)</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[^\x00-\xff]/g</span>;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>+—-<br>+<br>+### 正则技巧<br>+<br>+#### 反向引用<br>+<br>+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">// 比如这里我们想让这个日期格式反转</span></span><br><span class="line">+<span class="comment">// 正则括号是一个分组, 下面的代码就捕获了三个分组</span></span><br><span class="line">+<span class="comment">// 通过$分组符来转换位置, 来达到我们想要的结果</span></span><br><span class="line">+<span class="string">'2018-3-21'</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(\d&#123;1,2&#125;)-(\d&#123;1,2&#125;)/g</span>, <span class="string">'$2/$3/$1'</span>) <span class="comment">// "3/21/2018"</span></span><br><span class="line">+</span><br></pre></td></tr></table></figure></p>
-<p>+<br>+#### 忽略分組<br>+<br>+不希望捕获某些分组, 只需要分组内加上<code>?:</code>即可:<br>+<br>+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+<span class="keyword">var</span> reg = <span class="regexp">/(?:Byron).(ok)/</span>;</span><br><span class="line">+<span class="string">'Byron-ok'</span>.replace(reg, <span class="string">'$1'</span>);  <span class="comment">// 只匹配了 ok</span></span><br><span class="line">+</span><br></pre></td></tr></table></figure></p>
-<p>+<br>+#### 前瞻<br>+<br>+| 名字     | 正則          |<br>+| ——– | ————- |<br>+| 正向前瞻 | exp(?=assert) |<br>+| 负向前瞻 | exp(?!assert) |<br>+<br>+正向前瞻就是匹配前者, 效验后者是否存在.<br>+<br>+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">// 这个正则的意思是: 匹配一个单词字符( [a-zA-Z0-9_] ), 然后验证后面是不是数字</span></span><br><span class="line">+<span class="comment">// 结果为: "X2*3". 因为3后面没有数字, 所以没有匹配到.</span></span><br><span class="line">+<span class="string">'a2*3'</span>.replace(<span class="regexp">/\w(?=\d)/g</span>, <span class="string">'X'</span>)</span><br><span class="line">+</span><br><span class="line">+<span class="comment">// 结果为: "X2*X4X8"</span></span><br><span class="line">+<span class="comment">// 总的说就是</span></span><br><span class="line">+<span class="string">'a2*34v8'</span>.replace(<span class="regexp">/\w(?=\d)/g</span>, <span class="string">'X'</span>)</span><br><span class="line">+</span><br></pre></td></tr></table></figure></p>
-<p>+<br>+负向前瞻则相反, 匹配前面, 替代后面<br>+<br>+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">// a 是单词字符, 后面是数字, 因此没有匹配到</span></span><br><span class="line">+<span class="comment">// 2 是单词字符, 后面不是数字, 被替换成X</span></span><br><span class="line">+<span class="comment">// * 不是单词字符 因此没有匹配到</span></span><br><span class="line">+<span class="comment">// 3 是单词字符, 后面是数字, 因此没有匹配到</span></span><br><span class="line">+<span class="comment">// 4 是单词字符, 后面不是数字, 被替换成X</span></span><br><span class="line">+<span class="comment">// v 是单词字符, 后面是数字, 因此没有匹配到</span></span><br><span class="line">+<span class="comment">// 8 是单词字符, 后面没有匹配到数字, 被替换成X</span></span><br><span class="line">+<span class="comment">// 结果: aX*4XvX</span></span><br><span class="line">+<span class="string">'a2*34v8'</span>.replace(<span class="regexp">/\w(?!\d)/g</span>, <span class="string">'X'</span>)</span><br><span class="line">+</span><br></pre></td></tr></table></figure></p>
-<p>+<br>+—-</p>
+<hr>
+<h3 id="正则技巧"><a href="#正则技巧" class="headerlink" title="正则技巧"></a>正则技巧</h3><h4 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h4> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如这里我们想让这个日期格式反转</span></span><br><span class="line"><span class="comment">// 正则括号是一个分组, 下面的代码就捕获了三个分组</span></span><br><span class="line"><span class="comment">// 通过$分组符来转换位置, 来达到我们想要的结果</span></span><br><span class="line"><span class="string">'2018-3-21'</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(\d&#123;1,2&#125;)-(\d&#123;1,2&#125;)/g</span>, <span class="string">'$2/$3/$1'</span>) <span class="comment">// "3/21/2018"</span></span><br></pre></td></tr></table></figure>
+<h4 id="忽略分組"><a href="#忽略分組" class="headerlink" title="忽略分組"></a>忽略分組</h4><p> 不希望捕获某些分组, 只需要分组内加上<code>?:</code>即可:</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?:Byron).(ok)/</span>;</span><br><span class="line"><span class="string">'Byron-ok'</span>.replace(reg, <span class="string">'$1'</span>);  <span class="comment">// 只匹配了 ok</span></span><br></pre></td></tr></table></figure>
+<h4 id="前瞻"><a href="#前瞻" class="headerlink" title="前瞻"></a>前瞻</h4><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>正則</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正向前瞻</td>
+<td>exp(?=assert)</td>
+</tr>
+<tr>
+<td>负向前瞻</td>
+<td>exp(?!assert)</td>
+</tr>
+</tbody>
+</table>
+<p> 正向前瞻就是匹配前者, 效验后者是否存在.</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个正则的意思是: 匹配一个单词字符( [a-zA-Z0-9_] ), 然后验证后面是不是数字</span></span><br><span class="line"><span class="comment">// 结果为: "X2*3". 因为3后面没有数字, 所以没有匹配到.</span></span><br><span class="line"><span class="string">'a2*3'</span>.replace(<span class="regexp">/\w(?=\d)/g</span>, <span class="string">'X'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结果为: "X2*X4X8"</span></span><br><span class="line"><span class="comment">// 总的说就是</span></span><br><span class="line"><span class="string">'a2*34v8'</span>.replace(<span class="regexp">/\w(?=\d)/g</span>, <span class="string">'X'</span>)</span><br></pre></td></tr></table></figure>
+<p> 负向前瞻则相反, 匹配前面, 替代后面</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a 是单词字符, 后面是数字, 因此没有匹配到</span></span><br><span class="line"><span class="comment">// 2 是单词字符, 后面不是数字, 被替换成X</span></span><br><span class="line"><span class="comment">// * 不是单词字符 因此没有匹配到</span></span><br><span class="line"><span class="comment">// 3 是单词字符, 后面是数字, 因此没有匹配到</span></span><br><span class="line"><span class="comment">// 4 是单词字符, 后面不是数字, 被替换成X</span></span><br><span class="line"><span class="comment">// v 是单词字符, 后面是数字, 因此没有匹配到</span></span><br><span class="line"><span class="comment">// 8 是单词字符, 后面没有匹配到数字, 被替换成X</span></span><br><span class="line"><span class="comment">// 结果: aX*4XvX</span></span><br><span class="line"><span class="string">'a2*34v8'</span>.replace(<span class="regexp">/\w(?!\d)/g</span>, <span class="string">'X'</span>)</span><br></pre></td></tr></table></figure>
+<hr>
 <p> 最后如果有哪些正则规则有问题的, 可以留言探讨一下呀~<br> 参考链接：<br> <a href="https://github.com/anran758" target="_blank" rel="noopener">https://github.com/anran758</a></p>
 
       
@@ -395,7 +425,7 @@
         <p><span>本文标题:</span><a href="/2018/03/22/正则表达式/">正则表达式</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 李嘉 的个人博客">李嘉</a></p>
         <p><span>发布时间:</span>2018年03月22日 - 12时07分</p>
-        <p><span>最后更新:</span>2018年03月23日 - 11时15分</p>
+        <p><span>最后更新:</span>2018年03月24日 - 14时28分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/03/22/正则表达式/" title="正则表达式">http://Li970211.github.io/2018/03/22/正则表达式/</a>
             <span class="copy-path" data-clipboard-text="原文: http://Li970211.github.io/2018/03/22/正则表达式/　　作者: 李嘉" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -433,7 +463,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则速查表"><span class="toc-number">1.</span> <span class="toc-text">正则速查表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的正則方法示例"><span class="toc-number">1.1.</span> <span class="toc-text">常用的正則方法示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的表单验证"><span class="toc-number">1.1.1.</span> <span class="toc-text">常见的表单验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络相关"><span class="toc-number">1.1.2.</span> <span class="toc-text">网络相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联系方式"><span class="toc-number">1.1.3.</span> <span class="toc-text">联系方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配特定数字"><span class="toc-number">1.1.4.</span> <span class="toc-text">匹配特定数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串相关"><span class="toc-number">1.1.5.</span> <span class="toc-text">字符串相关</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则速查表"><span class="toc-number">1.</span> <span class="toc-text">正则速查表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的正則方法示例"><span class="toc-number">1.1.</span> <span class="toc-text">常用的正則方法示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的表单验证"><span class="toc-number">1.1.1.</span> <span class="toc-text">常见的表单验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络相关"><span class="toc-number">1.1.2.</span> <span class="toc-text">网络相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联系方式"><span class="toc-number">1.1.3.</span> <span class="toc-text">联系方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配特定数字"><span class="toc-number">1.1.4.</span> <span class="toc-text">匹配特定数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串相关"><span class="toc-number">1.1.5.</span> <span class="toc-text">字符串相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则技巧"><span class="toc-number">1.1.6.</span> <span class="toc-text">正则技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#反向引用"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">反向引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#忽略分組"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">忽略分組</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前瞻"><span class="toc-number">1.1.6.3.</span> <span class="toc-text">前瞻</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -511,7 +541,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/理解js中的this/">理解js中的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/22/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/21/hello/">hello</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/CSS布局解决方案-1-居中布局/">CSS布局解决方案(1)---居中布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/理解js中的this/">理解js中的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/22/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/21/hello/">hello</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
