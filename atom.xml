@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Li970211.github.io/"/>
-  <updated>2018-03-24T07:59:21.089Z</updated>
+  <updated>2018-03-25T06:59:40.145Z</updated>
   <id>http://Li970211.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>myPhoto</title>
+    <link href="http://Li970211.github.io/2018/03/25/myPhoto/"/>
+    <id>http://Li970211.github.io/2018/03/25/myPhoto/</id>
+    <published>2018-03-25T06:59:40.000Z</published>
+    <updated>2018-03-25T06:59:40.145Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSS布局解决方案(1)---居中布局</title>
