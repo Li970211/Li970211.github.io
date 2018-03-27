@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="李嘉" />
+
+
+
+<meta name="description" content="最近几天将CSS3学习了一下，CSS3里面增加了一些新的知识点。学完之后，在这里做一个小总结,今天先总结关于选择器的一些知识点，后面会陆续发布新的UI方案，过渡，动画和布局扩展等知识。">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习总结1">
+<meta property="og:url" content="http://Li970211.github.io/2018/03/27/css/index.html">
+<meta property="og:site_name" content="一路">
+<meta property="og:description" content="最近几天将CSS3学习了一下，CSS3里面增加了一些新的知识点。学完之后，在这里做一个小总结,今天先总结关于选择器的一些知识点，后面会陆续发布新的UI方案，过渡，动画和布局扩展等知识。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-27T10:06:41.244Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习总结1">
+<meta name="twitter:description" content="最近几天将CSS3学习了一下，CSS3里面增加了一些新的知识点。学完之后，在这里做一个小总结,今天先总结关于选择器的一些知识点，后面会陆续发布新的UI方案，过渡，动画和布局扩展等知识。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="一路" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CSS3学习总结1 | 一路</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/head.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李嘉</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">每天进步一点</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/books/">我的书籍</a></li>
+                        
+                            <li><a href="/about/">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1437690868@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/5780970667/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/li970211" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/yi-lu-75-27/activities" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="https://my.csdn.net/" title="CSDN"></a>
+                            
+                                <a class="fa QQ" href="http://shang.qq.com/open_webaio.html?sigt=eb712df3a1acd3799f3832bca8396600390fa4d693112f1b999118247c4ebd0a52d86f923851ea8255bce718fcc20ed6&sigu=cb489637ea5bcdd854b784cc52c56f47f0ca8e611701ddd4575159f404955070a7efb4e855559602&tuin=1437690868" title="QQ"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS布局/">CSS布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js中的this/">js中的this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js中的正则表达式/">js中的正则表达式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">水瓶座的我喜欢骑行，爬山爱运动、爱交友。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李嘉</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/head.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李嘉</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">每天进步一点</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/books/">我的书籍</a></li>
+                
+                    <li><a href="/about/">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1437690868@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/5780970667/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/li970211" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/yi-lu-75-27/activities" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="https://my.csdn.net/" title="CSDN"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="http://shang.qq.com/open_webaio.html?sigt=eb712df3a1acd3799f3832bca8396600390fa4d693112f1b999118247c4ebd0a52d86f923851ea8255bce718fcc20ed6&sigu=cb489637ea5bcdd854b784cc52c56f47f0ca8e611701ddd4575159f404955070a7efb4e855559602&tuin=1437690868" title="QQ"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
+ 
+  
+    <div class="article-meta">
+      <a href="/2018/03/27/css/" class="article-date">
+      <time datetime="2018-03-27T08:49:42.000Z" itemprop="datePublished">2018-03-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3学习总结1
+    </h1>
+  
+
+        
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p> 首先我们先了解什么是CSS?<br> CSS 指层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。<br> CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。浏览器读取css选择器的顺序是从右到左。<br> CSS3选择器规范地址：       <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/" target="_blank" rel="noopener">https://www.w3.org/TR/2011/REC-css3-selectors-20110929/</a><br> CSS3选择最新选择器规范:  <a href="https://www.w3.org/TR/selectors" target="_blank" rel="noopener">https://www.w3.org/TR/selectors</a><br> 分享的这两个网址是CSS3选择器的规范，大家在学习的时候可以看下。<br> 现在让我们一起看一下CSS3中的选择器。</p>
+<h2 id="1-基本选择器"><a href="#1-基本选择器" class="headerlink" title="1.基本选择器"></a>1.基本选择器</h2><p> <strong>通配符选择器</strong><br> 它是*的形式<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123; <span class="attribute">margin</span>: <span class="number">0</span>; <span class="attribute">padding</span>: <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure></p>
+<p> <strong>元素选择器</strong><br> body（任何一个HTML元素）<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">height</span>:<span class="number">100%</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p> <strong>类选择器</strong><br> 它是.的形式<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span> = <span class="string">"inner"</span>&gt;inner&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class</span> &#123; <span class="attribute">background</span>:pink &#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>ID选择器</strong><br> 它是#的形式<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span> = <span class="string">"inner"</span>&gt;inner&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#id</span> &#123; <span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>; &#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>后代选择器</strong><br> 它是空格的形式,这里是选择所有的后代。<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span> = <span class="string">"wrap"</span>&gt;wrap</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span> = <span class="string">"inner"</span>&gt;inner&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#wrap</span> <span class="selector-class">.inner</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-基本选择器扩展"><a href="#2-基本选择器扩展" class="headerlink" title="2.基本选择器扩展"></a>2.基本选择器扩展</h2><p> <strong>子元素选择器</strong><br> 子元素选择器也可称为直接后代选择器,使用&gt;来选择。注意此类选择器它不同于后代选择器，子元素选择器只是用来选择直接后代，不能匹配到深层次的后代元素.</p>
+<p> <strong>后代选择器和子选择器区别：</strong><br>   1.写法不一样：<br>      后代选择器的标识为：空格<br>      如：ul li{width:150px;} ul和li之间用空格隔开<br>      子选择器的标识为：&gt;<br>      如：ul&gt;li{width:150px;} ul和li之间用&gt;隔开<br>   2.功能不一样：<br>   后代选择器(descendant selector），又称为包含选择器，可以选择某元素后代的元素，如上例，后代选择器是选择ul包围的所有元素中的所有li元素，包括儿子元素、孙子元素、曾孙元素等等等。<br>   与后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素儿子元素的元素，子选择器仅仅选择ul包围的儿子元素中的 li元素，不包括孙元素、曾孙元素等等等。</p>
+<p>   3.兼容性不一样：<br>     后代选择器主流浏览器都兼容。<br>     子选择器在IE6是不被支持的选择器，会出bug！</p>
+<p> <strong>相邻兄弟选择器</strong><br>    使用+来选择。只匹配紧跟着的同胞元素。没有紧跟的兄弟元素匹配不到<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"wrap"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner1&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"first"</span>&gt;<span class="keyword">first</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner2&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner3&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner4&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner5&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner6&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#wrap</span> &gt; <span class="selector-class">.first</span> + <span class="selector-class">.inner</span> &#123;</span><br><span class="line">   <span class="attribute">color</span>: <span class="number">#f00</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p> 运行后inner2字体变红，其他不变<br> <strong>通用兄弟选择器</strong><br> 它会匹配所有的兄弟元素(不需要紧跟),在使用 ~<br> 连接两个元素时,它会匹配第二个元素,条件是:<br> 它必须跟(不一定是紧跟)在第一个元素之后,且他们都有一个共同的父元素<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"wrap"</span>&gt;</span><br><span class="line">   &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"first"</span>&gt;<span class="keyword">first</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;p&gt;&lt;/p&gt;</span><br><span class="line">   &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner1</span><br><span class="line">   &lt;<span class="keyword">div</span>&gt;inner2&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner3&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner4&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;inner5&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#wrap</span> <span class="selector-id">#first</span> ~ <span class="selector-tag">div</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid;&#125;</span><br></pre></td></tr></table></figure>
+<p> 运行之后我们可以通过控制台查看class为inner都有border: 1px solid这条边框样式，但是inner2这个div没有border: 1px solid这条样式，因为它不是id为first的div的兄弟元素。<br><strong>选择器分组</strong><br> 此处的逗号我们称之为结合符<br>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是h1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是h2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h3</span>&gt;</span>我是h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,h3&#123;<span class="attribute">color</span>: pink;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-属性选择器"><a href="#3-属性选择器" class="headerlink" title="3.属性选择器"></a>3.属性选择器</h2><p> 属性选择器是一种特殊类型的选择器，它根据元素的 属性和属性值来匹配元素。它们的通用语法由方括号([]) 组成，其中包含属性名称，后跟可选条件以匹配属性的值。 属性选择器可以根据其匹配属性值的方式分为两类： 存在和值属性选择器和子串值属性选择器。<br><strong>存在和值属性选择器</strong><br>    [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_lijia"</span>&gt;李嘉&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_ztj"</span>&gt;张腾金&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_hjl"</span>&gt;何佳林&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_lx"</span>&gt;李旋&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;一路&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[name]</span>&#123;<span class="attribute">color</span>: pink;&#125;</span><br></pre></td></tr></table></figure>
+<p> 运行只有”一路”字体颜色没有变成粉红色。其他四个div的字体变粉红色。<br>    [attr=val]该选择器仅选择 attr 属性被赋值为 val 的所有元素。<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[name = "hdjtdx_lijia"]</span>&#123;<span class="attribute">color</span>: pink;&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 以上面的例子为例，此时运行只有”李嘉”字体颜色变成粉红色<br>   [attr~=val]：表示带有以 attr 命名的属性的元素，并且该属性是一个以空格作为分隔的值列表，其中至少一个值为val。<br> <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_lijia hdjtdx"</span>&gt;李嘉&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_ztj"</span>&gt;张腾金&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_hjl hdjtdx yichun"</span>&gt;何佳林&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_lx"</span>&gt;李旋&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;一路&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[name ~= "hdjtdx"]</span>&#123;<span class="attribute">color</span>: pink;&#125;</span><br></pre></td></tr></table></figure>
+<p>  运行”李嘉”和”何佳林”变成粉红色的，其他的不变。</p>
+<h2 id="4-子串值属性选择器"><a href="#4-子串值属性选择器" class="headerlink" title="4.子串值属性选择器"></a>4.子串值属性选择器</h2><p> 这种情况的属性选择器也被称为“伪正则选择器”，因为它们提供类似 regular expression 的灵活匹配方式（但请注意，这些选择器并不是真正的正则表达式）：<br>        [attr|=val] : 选择attr属性的值是val（包括val）或以val-开头的元素。<br>        [attr^=val] : 选择attr属性的值以val开头（包括val）的元素。<br>        [attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。<br>        [attr*=val] : 选择attr属性的值中包含字符串val的元素。</p>
+ <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_lijia hdjtdx"</span>&gt;李嘉&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx-ztj"</span>&gt;张腾金&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_hjl hdjtdx"</span>&gt;何佳林&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"hdjtdx_lx"</span>&gt;李旋&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">name</span>=<span class="string">"yilu-hdjtdx"</span>&gt;一路&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[name|="hdjtdx"]</span>&#123;</span><br><span class="line"> <span class="attribute">color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   运行后”张腾金”字体变成粉红色字体，其他的不变。<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-attr">[name^="hdjtdx"]</span>&#123;</span><br><span class="line"><span class="attribute">color</span>: pink;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p> 运行后只有”一路”字体不变，因为它的name属性不是以hdjtdx开头的元素。其他四个div里面的字体颜色都变成粉红色。<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[name$="hdjtdx"]</span>&#123;</span><br><span class="line">   <span class="attribute">color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  运行后”李嘉”,”何佳林”和”一路”字体变成粉红色，因为它的name属性是以hdjtdx结尾的元素。<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[name*="z"]</span>&#123;</span><br><span class="line"> <span class="attribute">color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>   运行后只有”张腾金”字体变成粉红色，因为它的name属性的值包含字符串”z”的元素</p>
+<h2 id="5-伪类与伪元素选择器"><a href="#5-伪类与伪元素选择器" class="headerlink" title="5.伪类与伪元素选择器"></a>5.伪类与伪元素选择器</h2><p> 什么是伪类呢？简单点说，就是你没定义这个类，但它确实作为一个类来使用。（这些类确实存在，浏览器在后台会向这些类增加和删除元素）<br><strong>链接伪类</strong><br>    :link         表示作为超链接，并指向一个未访问的地址的所有锚<br>    :visited    表示作为超链接，并指向一个已访问的地址的所有锚<br>    :target     代表一个特殊的元素，它的id是URI的片段标识符<br>    注意:link，:visited，:target是作用于链接元素的！<br><strong>动态伪类</strong><br>    :hover        表示悬浮到元素上<br>     :active        表示匹配被用户激活的元素（点击按住时）<br>     注意:hover，:active基本可以作用于所有的元素！<br>    隐私与:visited选择器<br>    只有下列的属性才能被应用到已访问链接：<br>      color<br>      background-color<br>      border-color<br>　   a链接的四个伪类的书写顺序一定要正确，否则浏览器可能不会显示预期的结果。也即这样写：</p>
+<pre><code>1 a:link{color:black;}
+2 a:visited{color:gray;}
+3 a:hover{color:red;}
+4 a:active{color:blue;}
+</code></pre><p> 首先注意关键的两点：<br> 1.这4个伪类特指度相同。<br> 2.一个链接可能同时处于多种状态，即同时属于多个伪类。<br> 未点击链接前，link伪类长期处于激活状态，鼠标悬停（或点击）时，a链接同时处于link和hover(或active)状态，由于它们特指度相同，在同时激活的情况下，后出现的伪类样式会覆盖前面的伪类样式，故link状态必须写在hover(或active)之前。<br> 再讨论hover和active的顺序，若把hover放在active后面，当点击链接一瞬，实际你在激活active状态的同时触发了hover伪类,hover在后面覆盖了active的颜色，所以无法看到active的颜色。故hover在active之前<br> 其次，若把visited放在hover后面，那已访问过的链接一直触发着visited伪类，会覆盖hover样式。<br> 最后，其实link、visited两个伪类之间顺序无所谓。（因为它俩不可能同时触发，即又未访问同时又已访问。）<br> 记这顺序有个小招数，“LoVe？ HA!”。<br> 此处参考地址：<a href="http://www.cnblogs.com/xiayi/" target="_blank" rel="noopener">http://www.cnblogs.com/xiayi/</a></p>
+<p><strong>表单相关伪类</strong><br>            :enabled    匹配可编辑的表单<br>            :disable    匹配被禁用的表单<br>            :checked    匹配被选中的表单<br>            :focus        匹配获焦的表单</p>
+<p><strong>结构性伪类</strong><br>            index的值从1开始计数！！！！<br>            index可以为变量n(只能是n)<br>            index可以为even odd</p>
+<pre><code>#wrap ele:nth-child(index)        表示匹配#wrap中第index的子元素 这个子元素必须是ele
+#wrap ele:nth-of-type(index)    表示匹配#wrap中第index的ele子元素
+除此之外:nth-child和:nth-of-type有一个很重要的区别！！
+nth-of-type以元素为中心！！！
+:nth-child(index)系列
+:first-child
+:last-child
+:nth-last-child(index)
+:only-child    (相对于:first-child:last-child 或者 :nth-child(1):nth-last-child(1))
+:nth-of-type(index)系列
+:first-of-type
+:last-of-type
+:nth-last-type(index)
+:only-of-type    (相对于:first-of-type:last-of-type 或者 :nth-of-type(1):nth-last-of-type(1))
+</code></pre><p> :nth-child和:nth-of-type这两个系列的用法和区别我就不详细分析了。大家可以参考：<a href="https://blog.csdn.net/liuyan19891230/article/details/52839788" target="_blank" rel="noopener">https://blog.csdn.net/liuyan19891230/article/details/52839788</a><br> :not     否定伪类，用于匹配不符合参数选择器的元素；<br>  :empty 配没有子元素的元素。如果元素中含有文本节点、HTML元素或者一个空格，则:empty不能匹配这个元素；(内容必须是空的，有空格都不行，有attr没关系)<br><strong>伪元素</strong><br>    ::before/:before　 　在某个元素之前插入一些内容；<br>    ::after/:after　　　在某个元素之后插入一些内容；<br>    ::first-letter/:first-letter　为某个元素中的文字的首字母或第一个字使用样式；<br>    ::first-line/:first-line　　为某个元素的第一行文字使用样式；<br>     ::selection　　 匹配用户被用户选中或者处于高亮状态的部分<br> 注：上面并没有把CSS3里面的所有选择器列出来，只总结了一些比较常用的选择器。由于小弟我水平有限，难免有不足之处，希望各位大佬多多指点。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/03/27/css/">CSS3学习总结1</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李嘉</a></p>
+        <p><span>发布时间:</span>2018-03-27, 16:49:42</p>
+        <p><span>最后更新:</span>2018-03-27, 18:06:41</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/27/css/" title="CSS3学习总结1">http://Li970211.github.io/2018/03/27/css/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://Li970211.github.io/2018/03/27/css/　　作者: 李嘉" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/03/25/myPhoto/">
+                    myPhoto
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-基本选择器"><span class="toc-number">1.</span> <span class="toc-text">1.基本选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-基本选择器扩展"><span class="toc-number">2.</span> <span class="toc-text">2.基本选择器扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-属性选择器"><span class="toc-number">3.</span> <span class="toc-text">3.属性选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-子串值属性选择器"><span class="toc-number">4.</span> <span class="toc-text">4.子串值属性选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-伪类与伪元素选择器"><span class="toc-number">5.</span> <span class="toc-text">5.伪类与伪元素选择器</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"CSS3学习总结1　| 一路　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://Li970211.github.io/2018/03/27/css/';
+            this.page.identifier = '2018/03/27/css/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/03/25/myPhoto/" title="下一篇: myPhoto">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/27/css/">CSS3学习总结1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/25/myPhoto/">myPhoto</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/CSS布局解决方案-1-居中布局/">CSS布局解决方案(1)---居中布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/理解js中的this/">理解js中的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/22/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/21/hello/">hello</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2018 李嘉
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+
+</script>
+  </div>
+</body>
+</html>
