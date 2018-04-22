@@ -15,14 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的相册">
-<meta property="og:url" content="http://Li970211.github.io/photos/index.html">
+<meta name="description" content="这篇文章是关于js中的类型判断。这里我就直接用一个代码简要的介绍一下。">
+<meta name="keywords" content="typepf instanceof">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js类型判断">
+<meta property="og:url" content="http://Li970211.github.io/2018/04/22/js/js判断类型/index.html">
 <meta property="og:site_name" content="一路">
+<meta property="og:description" content="这篇文章是关于js中的类型判断。这里我就直接用一个代码简要的介绍一下。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-25T14:01:18.531Z">
+<meta property="og:updated_time" content="2018-04-22T07:07:39.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的相册">
+<meta name="twitter:title" content="js类型判断">
+<meta name="twitter:description" content="这篇文章是关于js中的类型判断。这里我就直接用一个代码简要的介绍一下。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>我的相册 | 一路</title>
+<title>js类型判断 | 一路</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -64,7 +68,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -283,12 +287,12 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js/js判断类型" class="article article-type-post" itemscope itemprop="blogPost">
  
   
     <div class="article-meta">
-      <a href="/photos/index.html" class="article-date">
-      <time datetime="2018-03-25T09:18:40.000Z" itemprop="datePublished">2018-03-25</time>
+      <a href="/2018/04/22/js/js判断类型/" class="article-date">
+      <time datetime="2018-04-22T07:00:27.000Z" itemprop="datePublished">2018-04-22</time>
 </a>
 
 
@@ -303,7 +307,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的相册
+      js类型判断
     </h1>
   
 
@@ -312,8 +316,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typepf-instanceof/">typepf instanceof</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -321,37 +333,66 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-          
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=534207935&auto=1&height=66"></iframe>
-
+        <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>类型判断<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span> = <span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> a = <span class="string">"sndi"</span>;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>];</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> c = <span class="literal">true</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> d = <span class="literal">undefined</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> e = <span class="literal">null</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> f = <span class="number">5</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> p = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> obj = &#123;</span></span><br><span class="line"><span class="actionscript">    name : <span class="string">"li"</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 注意的是，typeof方法返回一个字符串，来表示数据的类型。</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">//它的返回数据类型有（大写） String ,Boolean ,Undefined   Number   Function  Object</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">//可以具体判断出String，Number,Boolean,Undefined,Function.不能判断Null,和数组和对象</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> a,<span class="keyword">typeof</span> b,<span class="keyword">typeof</span> c,<span class="keyword">typeof</span> d,<span class="keyword">typeof</span> e,<span class="keyword">typeof</span> f,<span class="keyword">typeof</span> p,<span class="keyword">typeof</span> obj);</span></span><br><span class="line"><span class="actionscript">  <span class="comment">//            string  object  boolean undefined  object   number   function  object</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">//instanceof 返回true或者false </span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log( b <span class="keyword">instanceof</span> <span class="built_in">Array</span>);<span class="comment">//true</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(b));<span class="comment">//判断数组 true</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log( e <span class="keyword">instanceof</span> <span class="built_in">Object</span>);<span class="comment">//false  Javascript规范规定的，Null和Object都是javascript中的数据类型。Null数据类型只有一个值：null。就像undefined数据类型只有一个值：undefine</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">undefined</span>);<span class="comment">//true</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="literal">null</span> === <span class="literal">undefined</span>);<span class="comment">//false</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(e === <span class="literal">null</span>);<span class="comment">//true</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">'--------------------------------------------------'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(a).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(b).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(c).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(d).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(e).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(f).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(p).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj).slice(<span class="number">8</span>,<span class="number">-1</span>)); <span class="comment">//返回的是Sting类型，slice是截取了字符串</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">//推荐最后这种</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/04/22/js/js判断类型/">js类型判断</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李嘉</a></p>
+        <p><span>发布时间:</span>2018-04-22, 15:00:27</p>
+        <p><span>最后更新:</span>2018-04-22, 15:07:39</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/22/js/js判断类型/" title="js类型判断">http://Li970211.github.io/2018/04/22/js/js判断类型/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://Li970211.github.io/2018/04/22/js/js判断类型/　　作者: 李嘉" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/03/31/CSS学习总结-2/">
+                    CSS3学习总结(2)---过渡
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -369,7 +410,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"我的相册　| 一路　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"js类型判断　| 一路　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -388,8 +429,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://Li970211.github.io/photos/index.html';
-            this.page.identifier = 'photos/index.html';
+            this.page.url = 'http://Li970211.github.io/2018/04/22/js/js判断类型/';
+            this.page.identifier = '2018/04/22/js/js判断类型/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -406,6 +447,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/03/31/CSS学习总结-2/" title="下一篇: CSS3学习总结(2)---过渡">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/22/js/js判断类型/">js类型判断</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/31/CSS学习总结-2/">CSS3学习总结(2)---过渡</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/31/CSS学习总结/CSS学习总结-2/">CSS3学习总结(2)---过渡</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/27/css/css/">CSS3学习总结1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/25/myPhoto/">myPhoto</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/CSS布局解决方案-1-居中布局/">CSS布局解决方案(1)---居中布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/CSS学习总结/CSS布局解决方案-1-居中布局/">CSS布局解决方案(1)---居中布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/js/理解js中的this/">理解js中的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/22/js/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/21/hello/">hello</a></li></ul>
 
 
 
